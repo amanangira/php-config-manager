@@ -1,0 +1,12 @@
+{
+    "name": "amanangira/php-config-manager",
+    "description": "A package to implement different formats of file based configurations.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Aman Angira",
+            "email": "aman.angira@outlook.com"
+        }
+    ],
+    "require": {}
+}
