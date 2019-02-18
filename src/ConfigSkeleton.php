@@ -1,6 +1,6 @@
 <?php
 	
-	namespace Config;
+	namespace AmanAngira\Config;
 
 	abstract class ConfigSkeleton implements Config{
 		const PARAMETER_DELIMITER = '.';

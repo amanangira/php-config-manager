@@ -1,8 +1,8 @@
 <?php
 	
-	interface Config{
-		
+	namespace AmanAngira\Config;
 
+	interface Config{
 		protected $configFilesPath;
 		protected $extension;
 		

@@ -8,5 +8,10 @@
             "email": "aman.angira@outlook.com"
         }
     ],
+	"autload":[
+		"psr-4":{
+			"AmanAngira\Config\JsonConfig": "src"
+		}
+	],
     "require": {}
 }
