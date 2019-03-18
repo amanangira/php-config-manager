@@ -3,9 +3,11 @@
 	namespace AmanAngira\Config;
 
 	abstract class ConfigSkeleton implements Config{
-		const PARAMETER_DELIMITER = '.';
+		protected $configFilesPath;
+        protected $extension;
+        const PARAMETER_DELIMITER = '.';
 		const NOT_FOUND_FLAG = 'NOTFOUNDFALSE';
-
+        
 		/**
 		 * Returns the path of directory where the class
 		 * would assume the config files to be

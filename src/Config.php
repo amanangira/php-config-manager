@@ -3,8 +3,6 @@
 	namespace AmanAngira\Config;
 
 	interface Config{
-		protected $configFilesPath;
-		protected $extension;
 		
 		/**
 		 * Return the required parameter or entire 
@@ -18,5 +16,5 @@
 		 * @return mixed - depending on the type of value
 		 * being stored for required parameter
 		 */
-		abstract public function get($parameter, $default);
+		public function get($parameter, $default);
 	}
