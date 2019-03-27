@@ -1,5 +1,5 @@
 <?php
-	namespace AmanAngira\Config;
+	namespace AmanAngira\ConfigManager;
     
     use AmanAngira\ConfigManager\ManagerSkeleton; 
 
