@@ -1,5 +1,5 @@
 <?php
-	namespace AmanAngira\ConfigManager\JsonManager;
+	namespace AmanAngira\ConfigManager\Json;
     
     use AmanAngira\ConfigManager\ManagerSkeleton; 
 
