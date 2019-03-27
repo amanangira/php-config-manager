@@ -1,9 +1,9 @@
 <?php
-	namespace AmanAngira\ConfigManager;
+	namespace AmanAngira\ConfigManager\JsonManager;
     
     use AmanAngira\ConfigManager\ManagerSkeleton; 
 
-	class JsonManager extends ManagerSkeleton{
+	class Manager extends ManagerSkeleton{
 		const CONFIG_EXTENSION = '.json';
 
 		public function __construct($configFilesPath){
