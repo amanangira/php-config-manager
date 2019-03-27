@@ -10,7 +10,7 @@
     ],
     "autoload":{
         "psr-4": {
-            "AmanAngira\\Config\\": "src"
+            "AmanAngira\\ConfigManager\\": "src"
         }
     },
     "require": {}

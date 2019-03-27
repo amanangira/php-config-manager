@@ -1,8 +1,8 @@
 <?php
 	
-	namespace AmanAngira\Config;
+	namespace AmanAngira\Manager;
 
-	interface Config{
+	interface ManagerInterface{
 		
 		/**
 		 * Return the required parameter or entire 

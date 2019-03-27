@@ -1,8 +1,8 @@
 <?php
 	
-	namespace AmanAngira\Config;
+	namespace AmanAngira\ConfigManager;
 
-	abstract class ConfigSkeleton implements Config{
+	abstract class ManagerSkeleton implements ManagerInterface{
 		protected $configFilesPath;
         protected $extension;
         const PARAMETER_DELIMITER = '.';
