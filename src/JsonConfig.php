@@ -1,7 +1,6 @@
 <?php
 	namespace AmanAngira\Config;
     
-    require_once __DIR__ . '/../vendor/autoload.php';    
     use AmanAngira\Config\ConfigSkeleton; 
 
 	class JsonConfig extends ConfigSkeleton{
