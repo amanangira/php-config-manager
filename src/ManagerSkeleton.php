@@ -6,7 +6,7 @@
 		protected $configFilesPath;
         protected $extension;
         const PARAMETER_DELIMITER = '.';
-		const NOT_FOUND_FLAG = 'NOTFOUNDTRUE';
+		const NOT_FOUND_FLAG = null;
         
 		/**
 		 * Returns the path of directory where the class
