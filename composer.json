@@ -1,7 +1,8 @@
 {
     "name": "amanangira/php-config-manager",
-    "description": "A package to implement different formats of file based configurations.",
+    "description": "This library allows developers to implement different formats of file based configurations.",
     "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "Aman Angira",
