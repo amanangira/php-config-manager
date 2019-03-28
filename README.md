@@ -5,7 +5,10 @@ been built keeping ease and minimal effort for developer in mind. It currently s
 arrays. The base classes are easily extendible for further file type supports. 
 
 ## Installation
+### Composer
+$composer require amanangira/php-config-manager
 
+### Git 
 $git clone https://github.com/amanangira/php-config-manager.git
 
 ## Usage
