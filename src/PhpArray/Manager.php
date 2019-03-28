@@ -11,7 +11,7 @@
 			$this->setConfigFileExtension(self::CONFIG_EXTENSION);
 		}
 
-		public function get($parameter, $defaultValue){
+		public function get($parameter, $defaultValue = ManagerSkeleton::NOT_FOUND_FLAG){
 			$methodNamespace =  __METHOD__;
 
 			if( !is_string($parameter)  )
