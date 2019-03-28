@@ -32,7 +32,7 @@
 			$methodNamespace =  __METHOD__;
 			if(file_exists($filePath)){
                 $config = include( $filePath );
-                if( !is_array($config) )
+                if( is_array($config) )
 					return $config;
 				throw new \Exception( "$methodNamespace invalid PHP array in $filePath" );
 			}
