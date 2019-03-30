@@ -6,10 +6,10 @@ arrays. The base classes are easily extendible for further file type supports.
 
 ## Installation
 ### Composer
-$composer require amanangira/php-config-manager
+`composer require amanangira/php-config-manager`
 
 ### Git 
-$git clone https://github.com/amanangira/php-config-manager.git
+`git clone https://github.com/amanangira/php-config-manager.git`
 
 ## Usage
 
