@@ -3,8 +3,18 @@
 	namespace AmanAngira\ConfigManager;
 
 	abstract class ManagerSkeleton implements ManagerInterface{
+		/**
+		 * path to be provided at the time of instantiation. 
+		 * This is the path where this package would look 
+		 * for the desired file config
+		 */
 		protected $configFilesPath;
-        protected $extension;
+
+		/**
+		 * extension of the file the child class would 
+		 * be dealing with
+		 */
+		protected $extension;
         const PARAMETER_DELIMITER = '.';
 		const NOT_FOUND_FLAG = null;
         
