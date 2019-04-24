@@ -12,7 +12,6 @@ class Manager{
 
     protected function isConfigRequestCached($parameterString){
         return array_key_exists( trim($parameterString), ManagerSkeleton::$currentScopeConfigs );
-        
     }
 
     protected function getConfigFromRequestCache($parameterString){
