@@ -39,3 +39,7 @@ if( $value === Manager::NOT_FOUND_FLAG ) //library flag if a value is not define
 else
   echo $value;
 ```
+
+## To DO
+- Implement cache based configuration 
+- Enable modifying config values in current request scope 
