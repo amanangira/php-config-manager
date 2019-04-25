@@ -1,26 +1,31 @@
 <?php
 
-// RequestCacheManager
-class Manager{
-    
-    /**
-     * a shared variable across all objects, which would be 
-     * used to set and get config values under current
-     * request scope. Will contain key - value of getter string and volume
-     */
-    private static $currentScopeConfigs = [];
+    namespace AmanAngira\RequestCacheManager;
 
-    protected function isConfigRequestCached($parameterString){
-        return array_key_exists( trim($parameterString), ManagerSkeleton::$currentScopeConfigs );
-    }
+    // RequestCacheManager
+    class Manager{
+        
+        /**
+         * a shared variable across all objects, which would be 
+         * used to set and get config values under current
+         * request scope. Will contain key - value of getter string and volume
+         */
+        private static $currentScopeConfigs = [];
 
-    protected function getConfigFromRequestCache($parameterString){
-        if( $this->isConfigRequestCached( $parameterString ) )
-            return ManagerSkeleton::$currentScopeConfigs[$parameterString];
-        throw new \Exception("No config request cached for $parameterString");
-    }
+        protected function isConfigRequestCached($parameterString){
+            return array_key_exists( trim($parameterString), ManagerSkeleton::$currentScopeConfigs );
+        }
 
-    protected function setConfigInRequestCache($parameterString, $value){
-        ManagerSkeleton::$currentScopeConfigs[$parameterString] = $value;	
+        protected function getConfigFromRequestCache($parameterString){
+            if( $this->isConfigRequestCached( $parameterString ) )
+                return ManagerSkeleton::$currentScopeConfigs[$parameterString];
+            throw new \Exception(
+                "No config request cached for $parameterString, use Manager::isConfigRequestCached() before fetching a 
+                parameter to check if it exists"
+            );
+        }
+
+        protected function setConfigInRequestCache($parameterString, $value){
+            ManagerSkeleton::$currentScopeConfigs[$parameterString] = $value;	
+        }
     }
-}
