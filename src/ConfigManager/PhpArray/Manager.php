@@ -16,9 +16,9 @@
 			$methodNamespace =  __METHOD__;
 			$parameter = trim($parameter);
 			$this->validateParameterString($parameter, $methodNamespace);
-			$isCached = $this->requestCacheManager->isConfigRequestCached($parameter);
+			$isCached = $this->isRequestCached($parameter);
 			if($isCached)
-				return $this->requestCacheManager->getConfigFromRequestCache($parameter);
+				return $this->getFromRequestCache($parameter);
 			list( $file, $params ) = $this->getParamsFromString( $parameter );
 			$config = $this->checkAndGetFile($file);
 			$value = $this->extractFieldFromConfig($config, $params);
