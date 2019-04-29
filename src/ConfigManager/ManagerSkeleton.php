@@ -17,6 +17,12 @@
 		 * be dealing with
 		 */
 		protected $extension;
+		
+		/**
+		 * Instance of AmanAngira\RequestCacheManager\Manager
+		 * to get and set parameter in request scope
+		 */
+		private $requestCacheManager;
         const PARAMETER_DELIMITER = '.';
 		const NOT_FOUND_FLAG = null;
 		
@@ -80,13 +86,17 @@
 			];
 		}
 
-		public function set($parameterString, $value){
-			if( -1 === strpos( $parameter, '.' ) )
+		public function setInRequestCache($parameterString, $value){
+			if( -1 === strpos( $parameterString, '.' ) )
 				throw new \Exception("Setting a file level configuration is not allowed.");
 			$this->requestCacheManager->setConfigInRequestCache($parameterString, $value);
 		}
 
-		public function get($parameterString){
-			return $this->requestCacheManager->getConfigFromRequestCache($parameter);
+		protected function getFromRequestCache($parameterString){
+			return $this->requestCacheManager->getConfigFromRequestCache($parameterString);
+		}
+
+		protected function isRequestCached($parameterString){
+			return $this->isConfigRequestCached($parameterString);
 		}
 	}
