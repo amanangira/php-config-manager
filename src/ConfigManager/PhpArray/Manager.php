@@ -4,6 +4,7 @@
     use AmanAngira\ConfigManager\ManagerSkeleton; 
 
 	class Manager extends ManagerSkeleton{
+		private $requestCacheManager;
 		const CONFIG_EXTENSION = '.php';
 
 		public function __construct($configFilesPath){
@@ -13,12 +14,11 @@
 
 		public function get($parameter, $defaultValue = ManagerSkeleton::NOT_FOUND_FLAG){
 			$methodNamespace =  __METHOD__;
-
-			if( !is_string($parameter)  )
-				throw new \Exception("Parameter provided in $methodNamespace should be a string, " . gettype($parameter) . " given." );
-			if( trim($parameter) == '' )
-				throw new \Exception("Empty string provided for $methodNamespace.");
-
+			$parameter = trim($parameter);
+			$this->validateParameterString($parameter, $methodNamespace);
+			$isCached = $this->requestCacheManager->isConfigRequestCached($parameter);
+			if($isCached)
+				return $this->requestCacheManager->getConfigFromRequestCache($parameter);
 			list( $file, $params ) = $this->getParamsFromString( $parameter );
 			$config = $this->checkAndGetFile($file);
 			$value = $this->extractFieldFromConfig($config, $params);
@@ -26,7 +26,6 @@
 				return $defaultValue;
 			return $value;
 		}
-
 
 		private function checkAndGetFile($filePath){
 			$methodNamespace =  __METHOD__;
@@ -48,5 +47,12 @@
 	            return $this->extractFieldFromConfig( $config[$key], $params );
 	        }
 	        return self::NOT_FOUND_FLAG;
+		}
+
+		private function validateParameterString($parameterString, $namespace){
+			if( !is_string($parameterString)  )
+				throw new \Exception("Parameter provided in $namespace should be a string, " . gettype($parameterString) . " given." );
+			if( $parameterString == '' )
+				throw new \Exception("Empty string provided for $namespace.");
 		}
 	}
