@@ -9,6 +9,7 @@
 		public function __construct($configFilesPath){
 			$this->setConfigFilesPath($configFilesPath);
 			$this->setConfigFileExtension(self::CONFIG_EXTENSION);
+			parent::__construct();
 		}
 
 		public function get($parameter, $defaultValue = ManagerSkeleton::NOT_FOUND_FLAG){
