@@ -2,6 +2,8 @@
 	
 	namespace AmanAngira\ConfigManager;
 
+	use AmanAngira\RequestCacheManager\RequestCacheFactory;
+
 	abstract class ManagerSkeleton implements ManagerInterface{
 		/**
 		 * path to be provided at the time of instantiation. 
@@ -17,7 +19,11 @@
 		protected $extension;
         const PARAMETER_DELIMITER = '.';
 		const NOT_FOUND_FLAG = null;
-        
+		
+		public function __construct(){
+			$this->requestCacheManager = RequestCacheFactory::build();
+		}
+
 		/**
 		 * Returns the path of directory where the class
 		 * would assume the config files to be
@@ -74,4 +80,13 @@
 			];
 		}
 
+		public function set($parameterString, $value){
+			if( -1 === strpos( $parameter, '.' ) )
+				throw new \Exception("Setting a file level configuration is not allowed.");
+			$this->requestCacheManager->setConfigInRequestCache($parameterString, $value);
+		}
+
+		public function get($parameterString){
+			return $this->requestCacheManager->getConfigFromRequestCache($parameter);
+		}
 	}
