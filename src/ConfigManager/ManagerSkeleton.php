@@ -89,14 +89,18 @@
 		public function setInRequestCache($parameterString, $value){
 			if( -1 === strpos( $parameterString, '.' ) )
 				throw new \Exception("Setting a file level configuration is not allowed.");
-			$this->requestCacheManager->setConfigInRequestCache($parameterString, $value);
+			$this->getRequestCacheManager()->setConfigInRequestCache($parameterString, $value);
 		}
 
 		protected function getFromRequestCache($parameterString){
-			return $this->requestCacheManager->getConfigFromRequestCache($parameterString);
+			return $this->getRequestCacheManager()->getConfigFromRequestCache($parameterString);
 		}
 
 		protected function isRequestCached($parameterString){
-			return $this->isConfigRequestCached($parameterString);
+			return $this->getRequestCacheManager()->isConfigRequestCached($parameterString);
+		}
+
+		private function getRequestCacheManager(){
+			return $this->requestCacheManager;
 		}
 	}
