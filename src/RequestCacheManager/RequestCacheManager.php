@@ -2,7 +2,6 @@
 
     namespace AmanAngira\RequestCacheManager;
 
-    // RequestCacheManager
     class Manager{
         
         /**
@@ -26,6 +25,6 @@
         }
 
         protected function setConfigInRequestCache($parameterString, $value){
-            ManagerSkeleton::$currentScopeConfigs[$parameterString] = $value;	
+            ManagerSkeleton::$currentScopeConfigs[$parameterString] = $value;
         }
     }
