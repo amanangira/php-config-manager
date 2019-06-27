@@ -40,6 +40,6 @@ else
   echo $value;
 ```
 
-## To DO
+## To Do
 - Implement cache based configuration 
 - Enable modifying config values in current request scope 
